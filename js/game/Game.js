@@ -21,11 +21,11 @@ Game.prototype =  {
         ChickenState.preload = function() {
             Kiwi.State.prototype.preload.call(this);
             this.addImage('sky', 'img/sky.png');
-            this.addImage('sun', 'img/sun.png');
             this.addImage('ground', 'img/ground.png');
             this.addImage('henHouse', 'img/hen_house_with_chicken.png');
 
             this.addTextureAtlas('chickenAtlas', 'img/chicken_sprite.png', 'chickenJsonId', 'img/chicken_atlas.json');
+            this.addTextureAtlas('sunAtlas', 'img/sun_sprite.png', 'sunJsonId', 'img/sun_atlas.json');
         };
 
         ChickenState.create = function() {
@@ -34,7 +34,7 @@ Game.prototype =  {
             // Create background
             this.sky = new Kiwi.GameObjects.StaticImage(this, this.textures['sky'], 0, 0);
 
-            this.sun = new Sun(this, -100, -150, 0.5);
+            this.sun = new Sun(this, 250, 230, 1.5);
 
             this.ground = new Kiwi.GameObjects.StaticImage(this, this.textures['ground'], 0, 300);
 

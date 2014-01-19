@@ -1,7 +1,7 @@
 
 function Chicken(context, x, y, characterScale, gameScale) {
-    this.character = new Kiwi.GameObjects.Sprite(context, context.textures['chickenAtlas'], x, y);
-    this.character.animation.createFromSequence(context.textures['chickenAtlas'].sequences[0]);
+    this.gameObject = new Kiwi.GameObjects.Sprite(context, context.textures['chickenAtlas'], x, y);
+    this.gameObject.animation.createFromSequence(context.textures['chickenAtlas'].sequences[0]);
 
     this.setupOnClick();
 
@@ -15,7 +15,7 @@ function Chicken(context, x, y, characterScale, gameScale) {
         { name: "jump", weight: 0.01, random: false }];
 
     this.animation = this.animations[0];
-    this.character.animation.play(this.animation.name);
+    this.gameObject.animation.play(this.animation.name);
 
     this.frameCount = 0;
     this.jumpFrameCount = 0;
@@ -23,8 +23,8 @@ function Chicken(context, x, y, characterScale, gameScale) {
     this.characterScale = 1;
     if (characterScale) {
         this.characterScale = characterScale;
-        this.character.scaleX = this.characterScale;
-        this.character.scaleY = this.characterScale;
+        this.gameObject.scaleX = this.characterScale;
+        this.gameObject.scaleY = this.characterScale;
     }
 
     this.gameScale = 1;
@@ -39,7 +39,7 @@ Chicken.prototype = {
     constructor: Chicken,
 
     getCharacter: function() {
-        return this.character;
+        return this.gameObject;
     },
 
     update: function() {
@@ -49,19 +49,19 @@ Chicken.prototype = {
         if (this.animation.name == "run" || this.animation.name == "walk") {
             // Chicken direction
             if(this.left) {
-                this.character.transform.x -= ((this.animation.name == "run") ? 3 : 1);
-                this.character.scaleX = this.gameScale * this.characterScale;
+                this.gameObject.transform.x -= ((this.animation.name == "run") ? 3 : 1);
+                this.gameObject.scaleX = this.gameScale * this.characterScale;
             }
             else {
-                this.character.transform.x += ((this.animation.name == "run") ? 3 : 1);
-                this.character.scaleX = -this.gameScale * this.characterScale;
+                this.gameObject.transform.x += ((this.animation.name == "run") ? 3 : 1);
+                this.gameObject.scaleX = -this.gameScale * this.characterScale;
             }
 
             // Chicken change direction at boundary
-            if(this.character.transform.x > 700 && ! this.left) {
+            if(this.gameObject.transform.x > 700 && ! this.left) {
                 this.left = true;
             }
-            else if(this.character.transform.x < 50 && this.left) {
+            else if(this.gameObject.transform.x < 50 && this.left) {
                 this.left = false;
             }
         }
@@ -84,7 +84,7 @@ Chicken.prototype = {
     },
 
     setupOnClick: function() {
-        this.character.input.onRelease.add(this.changeToJumpAnimation, this);
+        this.gameObject.input.onRelease.add(this.changeToJumpAnimation, this);
     },
 
     changeAnimationAtRandomTime: function() {
@@ -112,7 +112,7 @@ Chicken.prototype = {
         else {
             this.animation = this.getRandomAnimation();
         }
-        this.character.animation.play(this.animation.name);
+        this.gameObject.animation.play(this.animation.name);
         this.frameCount = 0;
     },
 

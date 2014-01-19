@@ -1,11 +1,16 @@
 
 function Sun(context, xPos, yPos, scale) {
 
-    this.gameObject = new Kiwi.GameObjects.StaticImage(context, context.textures['sun'], xPos, yPos);
+    this.gameObject = new Kiwi.GameObjects.Sprite(context, context.textures['sunAtlas'], xPos, yPos);
+    this.gameObject.animation.createFromSequence(context.textures['sunAtlas'].sequences[0]);
+
     this.gameObject.transform.scale = scale;
 
-    this.gameObject.transform.rotPointX = 473,726;
-    this.gameObject.transform.rotPointY = 500;
+    this.gameObject.transform.rotPointX = 100;
+    this.gameObject.transform.rotPointY = 100;
+
+    this.animationName = "sparkle";
+    this.gameObject.animation.play(this.animationName);
 }
 
 Sun.prototype = {
@@ -17,6 +22,6 @@ Sun.prototype = {
 
     update: function() {
 
-        this.gameObject.rotation += 0.05;
+        this.gameObject.rotation += 0.001;
     }
 };

@@ -1,4 +1,4 @@
-var chickenState = new Kiwi.State("ChickenState");
+var chickenState = new Kiwi.State('ChickenState');
 
 chickenState.create = function() {
     Kiwi.State.prototype.create.call(this);

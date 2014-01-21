@@ -23,5 +23,5 @@ loadingState.preload = function(){
 
 loadingState.create = function(){
     Kiwi.State.prototype.create.call(this);
-    this.game.states.switchState("ChickenState");
+    this.game.states.switchState('ChickenState');
 }

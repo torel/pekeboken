@@ -1,13 +1,13 @@
-var LoadingState = new Kiwi.State('LoadingState');
+var loadingState = new Kiwi.State('LoadingState');
 
 
 
-LoadingState.init = function() {
+loadingState.init = function() {
     this.game.stage.width = 1200;
     this.game.stage.height = 800;
 };
 
-LoadingState.preload = function(){
+loadingState.preload = function(){
 
     Kiwi.State.prototype.preload.call(this);
     this.addImage('sky', 'img/sky.png');
@@ -21,7 +21,7 @@ LoadingState.preload = function(){
 
 }
 
-LoadingState.create = function(){
+loadingState.create = function(){
     Kiwi.State.prototype.create.call(this);
     this.game.states.switchState("ChickenState");
 }

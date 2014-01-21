@@ -1,6 +1,6 @@
-var ChickenState = new Kiwi.State();
+var chickenState = new Kiwi.State("ChickenState");
 
-ChickenState.create = function() {
+chickenState.create = function() {
     Kiwi.State.prototype.create.call(this);
 
     // Create background
@@ -32,7 +32,7 @@ ChickenState.create = function() {
     this.addChild(this.chicken4.getCharacter());
 };
 
-ChickenState.update = function() {
+chickenState.update = function() {
     Kiwi.State.prototype.update.call(this);
 
     this.chicken1.update();

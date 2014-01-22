@@ -1,4 +1,6 @@
 
+var kiwiGame = new Kiwi.Game();
+
 function Game() {
 
 }
@@ -9,11 +11,11 @@ Game.prototype =  {
     start: function() {
 
 
-        var kiwiGame = new Kiwi.Game();
+
 
         kiwiGame.states.addState(chickenState);
         // kiwiGame.states.State(pigState);
-        kiwiGame.states.addState(loadingState,true);
+        kiwiGame.states.addState(loadingState, true);
         this.gameScale = 1;
 
     }

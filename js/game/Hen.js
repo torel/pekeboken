@@ -4,6 +4,8 @@ function Hen(context, xPos, yPos, scale) {
     this.gameObject = new Kiwi.GameObjects.Sprite(context, context.textures['henAtlas'], xPos, yPos);
     this.gameObject.animation.createFromSequence(context.textures['henAtlas'].sequences[2]);
 
+    this.cluck = new Kiwi.Sound.Audio(kiwiGame, 'duck', 0.3, false);
+
     this.setupOnClick();
 
     this.gameObject.transform.scale = scale;
@@ -31,6 +33,7 @@ Hen.prototype = {
 
     setupOnClick: function() {
         this.gameObject.input.onRelease.add(this.changeToRandomAnimation, this);
+        this.gameObject.input.onRelease.add(this.playCluck, this);
     },
 
     changeToRandomAnimation: function() {
@@ -47,5 +50,9 @@ Hen.prototype = {
         else {
             return this.animations[1]
         }
+    },
+
+    playCluck: function() {
+        this.cluck.play();
     }
 };

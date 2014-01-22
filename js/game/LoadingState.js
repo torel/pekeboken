@@ -1,7 +1,5 @@
 var loadingState = new Kiwi.State('LoadingState');
 
-
-
 loadingState.init = function() {
     this.game.stage.width = 1200;
     this.game.stage.height = 800;

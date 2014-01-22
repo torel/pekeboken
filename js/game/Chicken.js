@@ -38,7 +38,7 @@ Chicken.prototype = {
 
     constructor: Chicken,
 
-    getCharacter: function() {
+    get: function() {
         return this.gameObject;
     },
 
@@ -49,11 +49,11 @@ Chicken.prototype = {
         if (this.animation.name == "run" || this.animation.name == "walk") {
             // Chicken direction
             if(this.left) {
-                this.gameObject.transform.x -= ((this.animation.name == "run") ? 3 : 1);
+                this.gameObject.transform.x -= ((this.animation.name == "run") ? 3 : 1) * this.characterScale;
                 this.gameObject.scaleX = this.gameScale * this.characterScale;
             }
             else {
-                this.gameObject.transform.x += ((this.animation.name == "run") ? 3 : 1);
+                this.gameObject.transform.x += ((this.animation.name == "run") ? 3 : 1) * this.characterScale;
                 this.gameObject.scaleX = -this.gameScale * this.characterScale;
             }
 

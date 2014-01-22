@@ -14,22 +14,34 @@ chickenState.create = function() {
     this.henHouse.transform.scaleX = -0.4;
     this.henHouse.transform.scaleY = 0.4;
 
+    this.flower1 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 700, 398);
+    this.flower2 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 720, 400);
+    this.flower3 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 705, 412);
+
     this.addChild(this.sky);
     this.addChild(this.sun.get());
     this.addChild(this.ground);
     this.addChild(this.henHouse);
 
-    this.chicken1 = new Chicken(this, 50, 400, 0.5, this.gameScale);
-    this.addChild(this.chicken1.getCharacter());
+    this.addChild(this.flower1);
+    this.addChild(this.flower2);
+    this.addChild(this.flower3);
 
-    this.chicken2 = new Chicken(this, 550, 420, 0.55, this.gameScale);
-    this.addChild(this.chicken2.getCharacter());
+    this.chicken1 = new Chicken(this, 50, 380, 0.45, this.gameScale * 0.6);
+    this.addChild(this.chicken1.get());
 
-    this.chicken3 = new Chicken(this, 250, 440, 0.6, this.gameScale);
-    this.addChild(this.chicken3.getCharacter());
+    this.chicken2 = new Chicken(this, 550, 400, 0.5, this.gameScale * 0.7);
+    this.addChild(this.chicken2.get());
+
+    this.hen = new Hen(this, 300, 310, 0.7);
+    this.addChild(this.hen.get());
+
+    this.chicken3 = new Chicken(this, 250, 440, 0.6, this.gameScale * 0.9);
+    this.addChild(this.chicken3.get());
 
     this.chicken4 = new Chicken(this, 650, 460, 0.65, this.gameScale);
-    this.addChild(this.chicken4.getCharacter());
+    this.addChild(this.chicken4.get());
+
 };
 
 chickenState.update = function() {

@@ -4,7 +4,8 @@ function Hen(context, xPos, yPos, scale) {
     this.gameObject = new Kiwi.GameObjects.Sprite(context, context.textures['henAtlas'], xPos, yPos);
     this.gameObject.animation.createFromSequence(context.textures['henAtlas'].sequences[2]);
 
-    this.cluck = new Kiwi.Sound.Audio(kiwiGame, 'duck', 0.3, false);
+    this.cluckSound = new Kiwi.Sound.Audio(kiwiGame, 'clucking', 0.5, false);
+    this.layEggSound = new Kiwi.Sound.Audio(kiwiGame, 'layEgg', 0.6, false);
 
     this.setupOnClick();
 
@@ -33,7 +34,7 @@ Hen.prototype = {
 
     setupOnClick: function() {
         this.gameObject.input.onRelease.add(this.changeToRandomAnimation, this);
-        this.gameObject.input.onRelease.add(this.playCluck, this);
+        this.gameObject.input.onRelease.add(this.playHenSound, this);
     },
 
     changeToRandomAnimation: function() {
@@ -52,7 +53,12 @@ Hen.prototype = {
         }
     },
 
-    playCluck: function() {
-        this.cluck.play();
+    playHenSound: function() {
+        if (this.animation.name == 'cluck') {
+            this.cluckSound.play();
+        }
+        else {
+            this.layEggSound.play();
+        }
     }
 };

@@ -7,6 +7,9 @@ loadingState.init = function() {
 
 loadingState.preload = function(){
 
+    this.game.stage.width = 1200;
+    this.game.stage.height = 800;
+
     Kiwi.State.prototype.preload.call(this);
     
     this.game.stage.width = 1200;
@@ -26,7 +29,8 @@ loadingState.preload = function(){
     this.addImage('pigGround', 'img/pig_ground.png');
 
     // Sound
-    this.addAudio('duck', 'assets/sound/and.mp3');
+    this.addAudio('clucking', 'assets/sound/clucking.mp3');
+    this.addAudio('layEgg', 'assets/sound/lay_egg.mp3');
 
 }
 

@@ -8,6 +8,9 @@ loadingState.init = function() {
 loadingState.preload = function(){
 
     Kiwi.State.prototype.preload.call(this);
+    
+    this.game.stage.width = 1200;
+    this.game.stage.height = 800;
 
     // Static images
     this.addImage('sky', 'img/sky.png');

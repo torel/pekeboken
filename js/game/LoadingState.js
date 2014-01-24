@@ -32,6 +32,7 @@ loadingState.preload = function(){
     this.addAudio('layEgg', 'assets/sound/lay_egg.mp3');
     this.addAudio('chicksPeeping', 'assets/sound/chicks_peeping.mp3');
     this.addAudio('highpitchedPeep', 'assets/sound/highpitched_peep.mp3');
+    this.addAudio('pigSnort', 'assets/sound/pigsnort.mp3');
 }
 
 loadingState.create = function() {
@@ -39,5 +40,6 @@ loadingState.create = function() {
     this.game.stage.width = 1200;
 
     Kiwi.State.prototype.create.call(this);
+    // this.game.states.switchState('ChickenState');
     this.game.states.switchState('ChickenState');
 }

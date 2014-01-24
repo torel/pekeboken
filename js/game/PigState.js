@@ -6,9 +6,13 @@ pigState.create = function() {
     // Create background
     this.sky = new Kiwi.GameObjects.StaticImage(this, this.textures['sky'], 0, 0);
 
-    this.sun = new Sun(this, 250, 230, 1.5);
+    this.sun = new Sun(this, 450, 30, 1.5);
 
-    this.ground = new Kiwi.GameObjects.StaticImage(this, this.textures['pigGround'], 0, 300);
+    this.ground = new Kiwi.GameObjects.StaticImage(this, this.textures['pigGround'], 0, 200);
+
+    this.buttonLeft = new Kiwi.GameObjects.Sprite(this, this.textures['button'], -270, 100);
+    this.buttonLeft.transform.scaleX = 0.1;
+    this.buttonLeft.transform.scaleY = 0.1;
 
     // this.flower1 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 700, 398);
     // this.flower2 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 720, 400);
@@ -18,34 +22,27 @@ pigState.create = function() {
     this.addChild(this.sun.get());
     this.addChild(this.ground);
 
+    this.pig = new Pig(this, 300, 310, 0.7);
+    this.addChild(this.pig.get());
+
+    this.addChild(this.buttonLeft);
+    this.buttonLeft.input.onUp.add(this.switchState,this)
+
     // this.addChild(this.flower1);
     // this.addChild(this.flower2);
     // this.addChild(this.flower3);
 
-    // this.chicken1 = new Chicken(this, 50, 380, 0.45, this.gameScale * 0.6);
-    // this.addChild(this.chicken1.get());
-
-    // this.chicken2 = new Chicken(this, 550, 400, 0.5, this.gameScale * 0.7);
-    // this.addChild(this.chicken2.get());
-
-    // this.hen = new Hen(this, 300, 310, 0.7);
-    // this.addChild(this.hen.get());
-
-    // this.chicken3 = new Chicken(this, 250, 440, 0.6, this.gameScale * 0.9);
-    // this.addChild(this.chicken3.get());
-
-    // this.chicken4 = new Chicken(this, 650, 460, 0.65, this.gameScale);
-    // this.addChild(this.chicken4.get());
-
+   
 };
 
 pigState.update = function() {
     Kiwi.State.prototype.update.call(this);
 
-    // this.chicken1.update();
-    // this.chicken2.update();
-    // this.chicken3.update();
-    // this.chicken4.update();
+    this.pig.update();
 
     this.sun.update();
 };
+
+pigState.switchState = function(){
+    this.game.states.switchState('ChickenState');
+}

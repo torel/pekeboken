@@ -2,7 +2,6 @@
 function Chicken(context, x, y, characterScale, gameScale) {
     this.gameObject = new Kiwi.GameObjects.Sprite(context, context.textures['chickenAtlas'], x, y);
     this.gameObject.animation.createFromSequence(context.textures['chickenAtlas'].sequences[0]);
-
     this.highpitchedPeep = new Kiwi.Sound.Audio(kiwiGame, 'highpitchedPeep', 0.5, false);
 
     this.onClickChicken();

@@ -34,8 +34,6 @@ chickenState.create = function() {
     this.addChild(this.ground);
     this.addChild(this.henHouse);
 
-    console.log(this,'this')
-
     this.addChild(this.flower1);
     this.addChild(this.flower2);
     this.addChild(this.flower3);

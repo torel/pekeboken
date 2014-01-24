@@ -1,25 +1,24 @@
 var loadingState = new Kiwi.State('LoadingState');
 
 loadingState.init = function() {
+
+    Kiwi.Stage.DEFAULT_HEIGHT = 800;
+    Kiwi.Stage.DEFAULT_WIDTH = 1000;
+
     this.game.stage.width = 1200;
     this.game.stage.height = 800;
 };
 
 loadingState.preload = function(){
 
-    this.game.stage.width = 1200;
-    this.game.stage.height = 800;
-
     Kiwi.State.prototype.preload.call(this);
-    
-    this.game.stage.width = 1200;
-    this.game.stage.height = 800;
 
     // Static images
     this.addImage('sky', 'img/sky.png');
     this.addImage('ground', 'img/ground.png');
     this.addImage('henHouse', 'img/hen_house_with_chicken.png');
     this.addImage('flower', 'img/flower.png');
+    this.addImage('button', 'img/button.png');
 
     // Texture atlases
     this.addTextureAtlas('chickenAtlas', 'img/chicken_sprite.png', 'chickenJsonId', 'img/chicken_atlas.json');
@@ -31,10 +30,14 @@ loadingState.preload = function(){
     // Sound
     this.addAudio('clucking', 'assets/sound/clucking.mp3');
     this.addAudio('layEgg', 'assets/sound/lay_egg.mp3');
-
+    this.addAudio('chicksPeeping', 'assets/sound/chicks_peeping.mp3');
+    this.addAudio('highpitchedPeep', 'assets/sound/highpitched_peep.mp3');
 }
 
-loadingState.create = function(){
+loadingState.create = function() {
+
+    this.game.stage.width = 1200;
+
     Kiwi.State.prototype.create.call(this);
     this.game.states.switchState('ChickenState');
 }

@@ -3,7 +3,9 @@ function Chicken(context, x, y, characterScale, gameScale) {
     this.gameObject = new Kiwi.GameObjects.Sprite(context, context.textures['chickenAtlas'], x, y);
     this.gameObject.animation.createFromSequence(context.textures['chickenAtlas'].sequences[0]);
 
-    this.setupOnClick();
+    this.highpitchedPeep = new Kiwi.Sound.Audio(kiwiGame, 'highpitchedPeep', 0.5, false);
+
+    this.onClickChicken();
 
     this.left = false;
     this.animations = [
@@ -83,8 +85,8 @@ Chicken.prototype = {
         this.changeAnimationAtRandomTime();
     },
 
-    setupOnClick: function() {
-        this.gameObject.input.onRelease.add(this.changeToJumpAnimation, this);
+    onClickChicken: function() {
+        this.gameObject.input.onRelease.add(this.jump, this);
     },
 
     changeAnimationAtRandomTime: function() {
@@ -95,6 +97,11 @@ Chicken.prototype = {
                 this.changeAnimation();
             }
         }
+    },
+
+    jump: function() {
+        this.highpitchedPeep.play();
+        this.changeToJumpAnimation();
     },
 
     changeToJumpAnimation: function() {

@@ -10,9 +10,6 @@ Game.prototype =  {
 
     start: function() {
 
-
-
-
         kiwiGame.states.addState(chickenState);
         kiwiGame.states.addState(pigState);
         kiwiGame.states.addState(loadingState, true);

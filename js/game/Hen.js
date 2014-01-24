@@ -7,8 +7,6 @@ function Hen(context, xPos, yPos, scale) {
     this.cluckSound = new Kiwi.Sound.Audio(kiwiGame, 'clucking', 0.5, false);
     this.layEggSound = new Kiwi.Sound.Audio(kiwiGame, 'layEgg', 0.6, false);
 
-    this.setupOnClick();
-
     this.gameObject.transform.scale = scale;
 
     this.animations = [
@@ -19,6 +17,8 @@ function Hen(context, xPos, yPos, scale) {
     this.animation = this.animations[2];
 
     this.gameObject.animation.play(this.animation.name);
+
+    this.onClickHen();
 }
 
 Hen.prototype = {
@@ -32,7 +32,7 @@ Hen.prototype = {
 
     },
 
-    setupOnClick: function() {
+    onClickHen: function() {
         this.gameObject.input.onRelease.add(this.changeToRandomAnimation, this);
         this.gameObject.input.onRelease.add(this.playHenSound, this);
     },

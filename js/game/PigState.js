@@ -22,8 +22,7 @@ pigState.create = function() {
     this.addChild(this.sun.get());
     this.addChild(this.ground);
 
-
-    this.tractor = new Tractor(this, 500, 230, 0.2);
+    this.tractor = new Tractor(this, 500, 130, 0.2);
     this.addChild(this.tractor.get());
 
     this.pig = new Pig(this, 300, 310, 0.5);
@@ -35,6 +34,7 @@ pigState.create = function() {
     // this.addChild(this.flower1);
     // this.addChild(this.flower2);
     // this.addChild(this.flower3);
+
 
    
 };

@@ -19,7 +19,7 @@ Tractor.prototype = {
 
     update: function() {
 
-    	this.gameObject.transform.x -= 1;
+    	this.gameObject.transform.x -= 1; 
 
     }
 }

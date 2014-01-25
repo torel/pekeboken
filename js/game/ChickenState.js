@@ -27,7 +27,7 @@ chickenState.create = function() {
     this.flower7 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 304, 397);
     this.flower8 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 322, 400);
 
-    this.buttonRight = new Kiwi.GameObjects.Sprite(this, this.textures['button'], 325, -170);
+    this.buttonRight = new Kiwi.GameObjects.Sprite(this, this.textures['button'], 720, 290);
     this.buttonRight.transform.scaleX = 0.5;
     this.buttonRight.transform.scaleY = 0.5;
 

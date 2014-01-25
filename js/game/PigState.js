@@ -23,10 +23,10 @@ pigState.create = function() {
     this.addChild(this.ground);
 
 
-    this.tractor = new Tractor(this, 500, 230, 0.3);
+    this.tractor = new Tractor(this, 500, 230, 0.2);
     this.addChild(this.tractor.get());
-    
-    this.pig = new Pig(this, 300, 310, 0.7);
+
+    this.pig = new Pig(this, 300, 310, 0.5);
     this.addChild(this.pig.get());
 
     this.addChild(this.buttonLeft);
@@ -43,6 +43,7 @@ pigState.update = function() {
     Kiwi.State.prototype.update.call(this);
 
     this.pig.update();
+    this.tractor.update();
 
     this.sun.update();
 };

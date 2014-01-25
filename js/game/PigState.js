@@ -10,9 +10,9 @@ pigState.create = function() {
 
     this.ground = new Kiwi.GameObjects.StaticImage(this, this.textures['pigGround'], 0, 200);
 
-    this.buttonLeft = new Kiwi.GameObjects.Sprite(this, this.textures['button'], -270, 100);
-    this.buttonLeft.transform.scaleX = 0.1;
-    this.buttonLeft.transform.scaleY = 0.1;
+    this.buttonLeft = new Kiwi.GameObjects.Sprite(this, this.textures['button'], -410, -170);
+    this.buttonLeft.transform.scaleX = 0.5;
+    this.buttonLeft.transform.scaleY = 0.5;
 
     // this.flower1 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 700, 398);
     // this.flower2 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 720, 400);

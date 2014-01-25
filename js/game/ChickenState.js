@@ -29,9 +29,9 @@ chickenState.create = function() {
     this.flower7 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 310, 395);
     this.flower8 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 322, 400);
 
-    this.buttonRight = new Kiwi.GameObjects.Sprite(this, this.textures['button'], 470, 100);
-    this.buttonRight.transform.scaleX = 0.1;
-    this.buttonRight.transform.scaleY = 0.1;
+    this.buttonRight = new Kiwi.GameObjects.Sprite(this, this.textures['button'], 325, -170);
+    this.buttonRight.transform.scaleX = 0.5;
+    this.buttonRight.transform.scaleY = 0.5;
 
     this.addChild(this.sky);
     this.addChild(this.sun.get());

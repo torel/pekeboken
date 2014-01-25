@@ -18,7 +18,7 @@ loadingState.preload = function(){
     this.addImage('ground', 'img/ground.png');
     this.addImage('henHouse', 'img/hen_house_with_chicken.png');
     this.addImage('flower', 'img/flower.png');
-    this.addImage('button', 'img/button.png');
+    this.addImage('button', 'img/inkscape/button.svg');
     this.addImage('pigGround', 'img/pig_ground.png');
     this.addImage('rooster', 'img/inkscape/rooster.svg');
 

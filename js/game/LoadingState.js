@@ -20,13 +20,13 @@ loadingState.preload = function(){
     this.addImage('flower', 'img/inkscape/flower.svg');
     this.addImage('button', 'img/inkscape/button.svg');
     this.addImage('pigGround', 'img/pig_ground.png');
-    this.addImage('rooster', 'img/inkscape/rooster.svg');
 
     // Texture atlases
     this.addTextureAtlas('chickenAtlas', 'img/chicken_sprite.png', 'chickenJsonId', 'img/chicken_atlas.json');
     this.addTextureAtlas('sunAtlas', 'img/sun_sprite.png', 'sunJsonId', 'img/sun_atlas.json');
     this.addTextureAtlas('henAtlas', 'img/hen_sprite.png', 'henJsonId', 'img/hen_atlas.json');
     this.addTextureAtlas('pigAtlas', 'img/pig_sprite.png', 'pigJsonId', 'img/pig_atlas.json');
+    this.addTextureAtlas('roosterAtlas', 'img/inkscape/rooster_sprite.svg', 'roosterJsonId', 'img/rooster_atlas.json');
     this.addTextureAtlas('tractorAtlas', 'img/tractor_sprite.svg', 'tractorJsonId', 'img/tractor_atlas.json');
 
 

@@ -14,9 +14,7 @@ chickenState.create = function() {
     this.henHouse.transform.scaleX = 0.4;
     this.henHouse.transform.scaleY = 0.4;
 
-    this.rooster = new Kiwi.GameObjects.StaticImage(this, this.textures['rooster'], -50, 20);
-    this.rooster.transform.scaleX = 0.3;
-    this.rooster.transform.scaleY = 0.3;
+    this.rooster = new Rooster(this, 100, 145, 0.6);
 
     this.flower1 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 700, 398);
     this.flower2 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 720, 400);
@@ -37,7 +35,7 @@ chickenState.create = function() {
     this.addChild(this.sun.get());
     this.addChild(this.ground);
     this.addChild(this.henHouse);
-    this.addChild(this.rooster);
+    this.addChild(this.rooster.get());
 
     this.addChild(this.flower1);
     this.addChild(this.flower2);
@@ -84,9 +82,6 @@ chickenState.switchState = function(){
     this.game.states.switchState('PigState');
 }
 
-// onClickChicken: function() {
-//         this.gameObject.input.onRelease.add(this.jump, this);
-//     },
 
 chickenState.update = function() {
     Kiwi.State.prototype.update.call(this);

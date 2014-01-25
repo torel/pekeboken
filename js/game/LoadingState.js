@@ -27,6 +27,7 @@ loadingState.preload = function(){
     this.addTextureAtlas('sunAtlas', 'img/sun_sprite.png', 'sunJsonId', 'img/sun_atlas.json');
     this.addTextureAtlas('henAtlas', 'img/hen_sprite.png', 'henJsonId', 'img/hen_atlas.json');
     this.addTextureAtlas('pigAtlas', 'img/pig_sprite.png', 'pigJsonId', 'img/pig_atlas.json');
+    this.addTextureAtlas('tractorAtlas', 'img/tractor_sprite.png', 'pigJsonId', 'img/tractor_atlas.json');
 
 
     // Sound

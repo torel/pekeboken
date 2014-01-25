@@ -33,6 +33,10 @@ Pig.prototype = {
 
     update: function() {
 
+    	if (this.animation.name == "walk") {
+    		this.gameObject.transform.x -= 1; 
+    	}
+
     },
 
     onClickPig: function() {

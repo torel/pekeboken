@@ -16,8 +16,8 @@ loadingState.preload = function(){
     // Static images
     this.addImage('sky', 'img/sky.png');
     this.addImage('ground', 'img/ground.png');
-    this.addImage('henHouse', 'img/hen_house_with_chicken.png');
-    this.addImage('flower', 'img/flower.png');
+    this.addImage('henHouse', 'img/inkscape/hen_house.svg');
+    this.addImage('flower', 'img/inkscape/flower.svg');
     this.addImage('button', 'img/inkscape/button.svg');
     this.addImage('pigGround', 'img/pig_ground.png');
     this.addImage('rooster', 'img/inkscape/rooster.svg');
@@ -34,6 +34,7 @@ loadingState.preload = function(){
     this.addAudio('clucking', 'assets/sound/clucking.mp3');
     this.addAudio('layEgg', 'assets/sound/lay_egg.mp3');
     this.addAudio('chicksPeeping', 'assets/sound/chicks_peeping.mp3');
+    this.addAudio('rooster', 'assets/sound/rooster.mp3');
     this.addAudio('highpitchedPeep', 'assets/sound/highpitched_peep.mp3');
     this.addAudio('pigSnort', 'assets/sound/pigsnort.mp3');
 }

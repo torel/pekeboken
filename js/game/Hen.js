@@ -45,7 +45,7 @@ Hen.prototype = {
     getRandomAnimation : function() {
         var randomNumber = Math.random();
 
-        if (randomNumber > 0.35) {
+        if (randomNumber > 0.30) {
             return this.animations[0];
         }
         else {

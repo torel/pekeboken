@@ -11,7 +11,7 @@ chickenState.create = function() {
     this.ground = new Kiwi.GameObjects.StaticImage(this, this.textures['ground'], 0, 300);
 
     this.henHouse = new Kiwi.GameObjects.StaticImage(this, this.textures['henHouse'], 0, 200);
-    this.henHouse.transform.scaleX = -0.4;
+    this.henHouse.transform.scaleX = 0.4;
     this.henHouse.transform.scaleY = 0.4;
 
     this.rooster = new Kiwi.GameObjects.StaticImage(this, this.textures['rooster'], -50, 20);
@@ -26,7 +26,7 @@ chickenState.create = function() {
     this.flower5 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 66, 352);
     this.flower6 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 53, 362);
 
-    this.flower7 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 310, 395);
+    this.flower7 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 304, 397);
     this.flower8 = new Kiwi.GameObjects.StaticImage(this, this.textures['flower'], 322, 400);
 
     this.buttonRight = new Kiwi.GameObjects.Sprite(this, this.textures['button'], 325, -170);
@@ -80,6 +80,7 @@ chickenState.create = function() {
 };
 
 chickenState.switchState = function(){
+    this.stopBackgroundSound();
     this.game.states.switchState('PigState');
 }
 
@@ -97,6 +98,10 @@ chickenState.update = function() {
 
     this.sun.update();
 
+};
+
+chickenState.stopBackgroundSound = function() {
+    this.chicksPeepingSound.pause();
 };
 
 chickenState.playBackgroundSound = function() {

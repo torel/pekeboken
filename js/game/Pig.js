@@ -5,7 +5,7 @@ function Pig(context, xPos, yPos, scale) {
     this.scale = scale;
     this.gameObject.transform.scale = scale;
     this.left = true;
-
+    this.context = context
     this.animations = [
         { name: "walk" },
         { name: "run" },
@@ -45,7 +45,7 @@ Pig.prototype = {
     		if(this.left) {
     			this.gameObject.transform.x -= ((this.animation.name == "run") ? 3 : 1);
     			this.gameObject.scaleX = this.characterScale
-    		
+
     		}
 
     		else {
@@ -54,10 +54,10 @@ Pig.prototype = {
     		}
     		
 
-    		if(this.gameObject.transform.x > 700 && ! this.left) {
+    		if((this.gameObject.transform.x ) > 700 * this.characterScale&& ! this.left) {
                 this.left = true;
         	}
-        	else if(this.gameObject.transform.x < 50 && this.left) {
+        	else if((this.gameObject.transform.x * this.characterScale) < 50 && this.left) {
                 this.left = false;
         	}
 
@@ -77,20 +77,13 @@ Pig.prototype = {
 	},
 
 	changeAnimation: function() {
-        // if (animation) {
-        //     this.animation = animation;
-        // }
-        // else {
-            this.animation = this.getRandomAnimation();
-        // }
+        this.animation = this.getRandomAnimation();
         this.gameObject.animation.play(this.animation.name);
     },
 
     getRandomAnimation : function() {
         var randomNumber = Math.floor(Math.random()*this.animations.length);
-        console.log(randomNumber)
         return this.animations[randomNumber];
-        
     }
 
 };

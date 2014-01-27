@@ -24,9 +24,9 @@ Tractor.prototype = {
     },
 
     update: function() {
-    	this.scale *= 0.9997
+    	// this.scale *= 0.9997
     	this.gameObject.transform.x -= 1;
-    	this.gameObject.transform.y -= 0.17;
+    	// this.gameObject.transform.y -= 0.17;
     	this.gameObject.transform.scale = this.scale;
     },
 

@@ -19,7 +19,8 @@ loadingState.preload = function(){
     this.addImage('henHouse', 'img/inkscape/hen_house.svg');
     this.addImage('flower', 'img/inkscape/flower.svg');
     this.addImage('button', 'img/inkscape/button.svg');
-    this.addImage('pigGround', 'img/pig_ground.png');
+    this.addImage('pigGround', 'img/pig_background.svg');
+    this.addImage('fence', 'img/fence.svg');
 
     // Texture atlases
     this.addTextureAtlas('chickenAtlas', 'img/chicken_sprite.png', 'chickenJsonId', 'img/chicken_atlas.json');
@@ -28,7 +29,7 @@ loadingState.preload = function(){
     this.addTextureAtlas('pigAtlas', 'img/pig_sprite.png', 'pigJsonId', 'img/pig_atlas.json');
     this.addTextureAtlas('roosterAtlas', 'img/inkscape/rooster_sprite.svg', 'roosterJsonId', 'img/rooster_atlas.json');
     this.addTextureAtlas('tractorAtlas', 'img/tractor_sprite.svg', 'tractorJsonId', 'img/tractor_atlas.json');
-
+    this.addTextureAtlas('fenceAtlas', 'img/fence_sprite.svg', 'fenceJsonId', 'img/fence_atlas.json');
 
     // Sound
     this.addAudio('clucking', 'assets/sound/clucking.mp3');

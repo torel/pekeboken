@@ -8,6 +8,7 @@ chickenState.create = function() {
     this.sky = new Kiwi.GameObjects.StaticImage(this, this.textures['sky'], 0, 0);
 
     this.sun = new Sun(this, 250, 230, 1.5);
+    this.cloud = new Cloud(this, 0, 0, 1, this.gameScale);
 
     this.ground = new Kiwi.GameObjects.StaticImage(this, this.textures['ground'], 0, 300);
 
@@ -32,9 +33,14 @@ chickenState.create = function() {
     this.buttonRight.transform.scaleX = 0.5;
     this.buttonRight.transform.scaleY = 0.5;
 
+    this.smile = new Kiwi.GameObjects.StaticImage(this, this.textures['smile'], 307, 285);
+
     this.addChild(this.sky);
     this.addChild(this.sun.get());
+    this.addChild(this.cloud.get());
     this.addChild(this.ground);
+
+
     this.addChild(this.henHouse);
     this.addChild(this.rooster.get());
 
@@ -49,7 +55,8 @@ chickenState.create = function() {
     this.addChild(this.flower7);
     this.addChild(this.flower8);
     
-   
+    this.addChild(this.smile);
+    this.smile.visibility = false;
 
     this.chicken1 = new Chicken(this, 50, 380, 0.45, this.gameScale * 0.6);
     this.addChild(this.chicken1.get());
@@ -65,8 +72,6 @@ chickenState.create = function() {
 
     this.chicken4 = new Chicken(this, 650, 460, 0.65, this.gameScale);
     this.addChild(this.chicken4.get());
-
-    //this.addChild(this.buttonRight);
 
     // Sound
     this.chicksPeepingSound = new Kiwi.Sound.Audio(kiwiGame, 'chicksPeeping', 0.2, true);
@@ -95,6 +100,7 @@ chickenState.update = function() {
     this.chicken4.update();
 
     this.sun.update();
+    this.cloud.update();
 
     if (this.mouse.isDown) {
         console.log(this.mouse.x, this.mouse.y)
@@ -109,4 +115,8 @@ chickenState.stopBackgroundSound = function() {
 
 chickenState.playBackgroundSound = function() {
     this.chicksPeepingSound.play();
+};
+
+chickenState.displaySmile = function() {
+    chickenState.smile.visibility = true;
 };

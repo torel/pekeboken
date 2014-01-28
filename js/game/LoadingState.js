@@ -21,6 +21,8 @@ loadingState.preload = function(){
     this.addImage('button', 'img/inkscape/button.svg');
     this.addImage('pigGround', 'img/pig_background.svg');
     this.addImage('fence', 'img/fence.svg');
+    this.addImage('smile', 'img/inkscape/smile.svg');
+    this.addImage('cloud', 'img/inkscape/cloud.svg');
 
     // Texture atlases
     this.addTextureAtlas('chickenAtlas', 'img/chicken_sprite.png', 'chickenJsonId', 'img/chicken_atlas.json');

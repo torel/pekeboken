@@ -11,6 +11,8 @@ function Sun(context, xPos, yPos, scale) {
 
     this.animationName = "sparkle";
     this.gameObject.animation.play(this.animationName);
+
+    this.onClickSun(context);
 }
 
 Sun.prototype = {
@@ -23,5 +25,9 @@ Sun.prototype = {
     update: function() {
 
         this.gameObject.rotation += 0.001;
+    },
+
+    onClickSun: function() {
+        this.gameObject.input.onRelease.add(chickenState.displaySmile, this);
     }
 };

@@ -3,6 +3,7 @@ var chickenState = new Kiwi.State('ChickenState');
 chickenState.create = function() {
     Kiwi.State.prototype.create.call(this);
 
+
     // Create background
     this.sky = new Kiwi.GameObjects.StaticImage(this, this.textures['sky'], 0, 0);
 
@@ -75,6 +76,8 @@ chickenState.create = function() {
     this.addChild(this.buttonRight);
     this.buttonRight.input.onUp.add(this.switchState,this)
 
+    this.mouse = this.game.input.mouse;
+
 };
 
 chickenState.switchState = function(){
@@ -92,6 +95,11 @@ chickenState.update = function() {
     this.chicken4.update();
 
     this.sun.update();
+
+    if (this.mouse.isDown) {
+        console.log(this.mouse.x, this.mouse.y)
+        console.log(this.game.stage.name)
+    }
 
 };
 

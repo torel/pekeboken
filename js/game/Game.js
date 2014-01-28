@@ -1,8 +1,9 @@
-
-var kiwiGame = new Kiwi.Game();
+// var kiwiGame = new Kiwi.Game();
+var kiwiGame = new Kiwi.Game('', 'KiwiGame', null ,  Kiwi.TARGET_COCOON);
 
 function Game() {
 
+   
 }
 
 Game.prototype =  {

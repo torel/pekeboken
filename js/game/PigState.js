@@ -8,23 +8,33 @@ var pigState = new Kiwi.State('PigState');
 
 pigState.create = function() {
     Kiwi.State.prototype.create.call(this);
-    this.game.stage.width = 1200;
-    this.game.stage.height = 800;
+    // this.game.stage.width = 1200;
+    // this.game.stage.height = 800;
 
     // Create background
     this.sky = new Kiwi.GameObjects.StaticImage(this, this.textures['sky'], 0, 0);
 
     this.sun = new Sun(this, 450, 30, 1.5);
 
-    this.fence = new Kiwi.GameObjects.StaticImage(this, this.textures['fence'], 0, 290);
-    this.fence2 = new Kiwi.GameObjects.StaticImage(this, this.textures['fence'], 257, 290)
-    this.fence3 = new Kiwi.GameObjects.StaticImage(this, this.textures['fence'], 514, 290)
+    this.fence = new Kiwi.GameObjects.StaticImage(this, this.textures['fence'], -20, 405);
+    this.fence2 = new Kiwi.GameObjects.StaticImage(this, this.textures['fence'], 210, 405);
+    this.fence3 = new Kiwi.GameObjects.StaticImage(this, this.textures['fence'], 440, 405);
+    this.fence4 = new Kiwi.GameObjects.StaticImage(this, this.textures['fence'], 670, 405);
+    this.fence.scaleY = 0.9;
+    this.fence.scaleX = 0.9;
+    this.fence2.scaleY = 0.9;
+    this.fence2.scaleX = 0.9;
+    this.fence3.scaleY = 0.9;
+    this.fence3.scaleX = 0.9;
+    this.fence4.scaleY = 0.9;
+    this.fence4.scaleX = 0.9;
 
-    this.ground = new Kiwi.GameObjects.StaticImage(this, this.textures['pigGround'], 0, 0);
+
+    this.ground = new Kiwi.GameObjects.StaticImage(this, this.textures['pigGround'], -200, 100);
     // var xscale = 1
     // var yscale = 740/1200
     this.ground.scaleX = (8/12);
-    this.ground.scaleY = 0.6;
+    this.ground.scaleY = (5/6);
 
     this.buttonLeft = new Kiwi.GameObjects.Sprite(this, this.textures['button'], -20, 290);
     this.buttonLeft.transform.scaleX = -0.5;
@@ -53,14 +63,15 @@ pigState.create = function() {
     this.addChild(this.sun.get());
     this.addChild(this.ground);
 
-    this.tractor = new Tractor(this, 500, 70, 0.2);
+    this.tractor = new Tractor(this, 500, 175, 0.2);
     this.addChild(this.tractor.get());
 
     this.addChild(this.fence);
     this.addChild(this.fence2);
     this.addChild(this.fence3);
+    this.addChild(this.fence4);
 
-    this.pig = new Pig(this, 300, 310, 0.4);
+    this.pig = new Pig(this, 300, 400, 0.4);
     this.addChild(this.pig.get());
 
     this.addChild(this.buttonLeft);
@@ -83,6 +94,7 @@ pigState.update = function() {
     this.sun.update();
      if (this.mouse.isDown) {
         console.log(this.mouse.x, this.mouse.y)
+        console.log(this.game.stage.name)
     }
 };
 

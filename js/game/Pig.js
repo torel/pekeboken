@@ -54,7 +54,7 @@ Pig.prototype = {
     		}
     		
 
-    		if((this.gameObject.transform.x ) > 700 * this.characterScale&& ! this.left) {
+    		if((this.gameObject.transform.x ) > 1150 * this.characterScale&& ! this.left) {
                 this.left = true;
         	}
         	else if((this.gameObject.transform.x * this.characterScale) < 50 && this.left) {

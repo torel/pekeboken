@@ -5,8 +5,8 @@ loadingState.init = function() {
     Kiwi.Stage.DEFAULT_HEIGHT = 800;
     Kiwi.Stage.DEFAULT_WIDTH = 1000;
 
-    this.game.stage.width = 1200;
-    this.game.stage.height = 800;
+    this.game.stage._width = 1200;
+    this.game.stage._height = 800;
 };
 
 loadingState.preload = function(){
@@ -42,7 +42,7 @@ loadingState.preload = function(){
 
 loadingState.create = function() {
 
-    this.game.stage.width = 1200;
+    this.game.stage._width = 1200;
 
     Kiwi.State.prototype.create.call(this);
     // this.game.states.switchState('ChickenState');

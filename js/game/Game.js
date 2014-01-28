@@ -1,5 +1,11 @@
-// var kiwiGame = new Kiwi.Game();
-var kiwiGame = new Kiwi.Game('', 'KiwiGame', null ,  Kiwi.TARGET_COCOON);
+var gameOptions = {
+                    deviceTarget:   Kiwi.TARGET_COCOON,     // Kiwi.TARGET_COCOON eller Kiwi.TARGET_BROWSER
+                    renderer:       Kiwi.RENDERER_CANVAS,   // Kiwi.RENDERER_WEBGL eller Kiwi.RENDERER_CANVAS
+                    debug:          Kiwi.DEBUG_ON           // Kiwi.DEBUG_ON eller Kiwi.DEBUG_OFF
+                }
+
+
+var kiwiGame = new Kiwi.Game('', 'kiwiGame', null ,  gameOptions);
 
 function Game() {
 

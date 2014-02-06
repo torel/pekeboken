@@ -1,0 +1,42 @@
+{
+	"name":"cloud",
+	"cells": [
+		{
+			"x":0,
+			"y":0,
+			"w":250,
+			"h":250
+		},
+        {
+            "x":250,
+            "y":0,
+            "w":250,
+            "h":250
+        },
+        {
+            "x":500,
+            "y":0,
+            "w":250,
+            "h":250
+        }
+	],
+	"sequences" : [
+		{
+            "name":"cloudy",
+            "cells":[
+                0
+            ],
+            "loop":false,
+            "speed":0.1
+		},
+        {
+            "name":"rain",
+            "cells":[
+                1,2
+            ],
+            "loop":true,
+            "speed":0.1
+
+        }
+	]
+}

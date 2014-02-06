@@ -8,7 +8,7 @@ chickenState.create = function() {
     this.sky = new Kiwi.GameObjects.StaticImage(this, this.textures['sky'], 0, 0);
 
     this.sun = new Sun(this, 250, 230, 1.5);
-    this.cloud = new Cloud(this, 0, 0, 1, this.gameScale);
+    this.cloud = new Cloud(this, 0, 0, 1);
 
     this.ground = new Kiwi.GameObjects.StaticImage(this, this.textures['ground'], 0, 300);
 
@@ -37,12 +37,12 @@ chickenState.create = function() {
 
     this.addChild(this.sky);
     this.addChild(this.sun.get());
-    this.addChild(this.cloud.get());
+    this.addChild(this.cloud);
     this.addChild(this.ground);
 
 
     this.addChild(this.henHouse);
-    this.addChild(this.rooster.get());
+    this.addChild(this.rooster);
 
     this.addChild(this.flower1);
     this.addChild(this.flower2);
@@ -65,7 +65,7 @@ chickenState.create = function() {
     this.addChild(this.chicken2.get());
 
     this.hen = new Hen(this, 300, 310, 0.7);
-    this.addChild(this.hen.get());
+    this.addChild(this.hen);
 
     this.chicken3 = new Chicken(this, 250, 440, 0.6, this.gameScale * 0.9);
     this.addChild(this.chicken3.get());

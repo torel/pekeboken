@@ -1,30 +1,46 @@
 
-function Cloud(context, xPos, yPos, scale, gameScale) {
+var Cloud = function (context, xPos, yPos, scale) {
 
-    this.gameObject = new Kiwi.GameObjects.StaticImage(context, context.textures['cloud'], xPos, yPos);
-    this.gameObject.transform.scale = scale;
+    Kiwi.GameObjects.Sprite.call(this, context, context.textures['cloudAtlas'], xPos, yPos);
+    this.animation.createFromSequence(context.textures['cloudAtlas'].sequences[1]);
 
-    this.gameScale = 1;
-    if (gameScale) {
-        this.gameScale = gameScale;
-    }
+    this.transform.scale = scale;
 
-    this.onClickCloud();
-}
+    var gameObject = this;
+    var animations = [
+        { name: "cloudy" },
+        { name: "rain" }
+    ];
+    var animation = animations[0];
 
-Cloud.prototype = {
-    constructor: Cloud,
+    this.animation.play(animation.name);
 
-    get: function() {
-        return this.gameObject;
-    },
+    this.input.onRelease.add(
+        function() {
+            if (animation.name = "cloudy") {
+                animation = animations[1];
+            }
+            else {
+                animation = animations[0];
+            }
+            gameObject.animation.play(animation.name);
+        }
+        , this
+    );
 
-    update: function() {
-        //this.gameObject.transform.x -= 1 * this.characterScale;
-        //this.gameObject.scaleX = this.gameScale * this.characterScale;
-    },
+    var createNewDrop = function() {
+        var randomNumber = Math.random();
+        if (randomNumber > 0.1) {
+            var drop = new Kiwi.GameObjects.StaticImage(this, this.textures['drop'], 0, 0);
 
-    onClickCloud: function() {
-        //this.gameObject.input.onRelease.add(//, this);
-    }
+        }
+    };
+
+    Cloud.prototype.update = function() {
+        Kiwi.GameObjects.Sprite.prototype.update.call(this);
+    };
+
+
 };
+
+Kiwi.extend(Cloud, Kiwi.GameObjects.Sprite);

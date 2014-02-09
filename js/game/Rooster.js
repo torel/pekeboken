@@ -25,7 +25,7 @@ var Rooster = function (context, xPos, yPos, scale) {
         this
     );
 
-    Cloud.prototype.update = function() {
+    Rooster.prototype.update = function() {
         Kiwi.GameObjects.Sprite.prototype.update.call(this);
     };
 };

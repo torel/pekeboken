@@ -1,33 +1,20 @@
 
-function Sun(context, xPos, yPos, scale) {
+var Sun = function (context, xPos, yPos, scale) {
 
-    this.gameObject = new Kiwi.GameObjects.Sprite(context, context.textures['sunAtlas'], xPos, yPos);
-    this.gameObject.animation.createFromSequence(context.textures['sunAtlas'].sequences[0]);
+    Kiwi.GameObjects.Sprite.call(this, context, context.textures['sunAtlas'], xPos, yPos);
+    this.animation.createFromSequence(context.textures['sunAtlas'].sequences[0]);
 
-    this.gameObject.transform.scale = scale;
+    this.transform.scale = scale;
+    this.transform.rotPointX = 100;
+    this.transform.rotPointY = 100;
 
-    this.gameObject.transform.rotPointX = 100;
-    this.gameObject.transform.rotPointY = 100;
+    this.animation.play("sparkle");
 
-    this.animationName = "sparkle";
-    this.gameObject.animation.play(this.animationName);
+    this.input.onRelease.add(chickenState.displaySmile, this);
 
-    this.onClickSun(context);
-}
-
-Sun.prototype = {
-    constructor: Sun,
-
-    get: function() {
-        return this.gameObject;
-    },
-
-    update: function() {
-
-        this.gameObject.rotation += 0.001;
-    },
-
-    onClickSun: function() {
-        this.gameObject.input.onRelease.add(chickenState.displaySmile, this);
-    }
+    Sun.prototype.update = function() {
+        Kiwi.GameObjects.Sprite.prototype.update.call(this);
+        this.rotation += 0.001;
+    };
 };
+Kiwi.extend(Sun, Kiwi.GameObjects.Sprite);

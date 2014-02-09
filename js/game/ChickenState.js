@@ -36,7 +36,7 @@ chickenState.create = function() {
     this.smile = new Kiwi.GameObjects.StaticImage(this, this.textures['smile'], 307, 285);
 
     this.addChild(this.sky);
-    this.addChild(this.sun.get());
+    this.addChild(this.sun);
     this.addChild(this.cloud);
     this.addChild(this.ground);
 
